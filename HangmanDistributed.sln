@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameService", "GameService\GameService.csproj", "{739B92E6-7675-4DA6-8E8E-52DDB6403644}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameGUI", "GameGUI\GameGUI.csproj", "{9A4D0A3E-7997-45F2-8D2F-CA45CB16CCEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{739B92E6-7675-4DA6-8E8E-52DDB6403644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{739B92E6-7675-4DA6-8E8E-52DDB6403644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{739B92E6-7675-4DA6-8E8E-52DDB6403644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{739B92E6-7675-4DA6-8E8E-52DDB6403644}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A4D0A3E-7997-45F2-8D2F-CA45CB16CCEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A4D0A3E-7997-45F2-8D2F-CA45CB16CCEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A4D0A3E-7997-45F2-8D2F-CA45CB16CCEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A4D0A3E-7997-45F2-8D2F-CA45CB16CCEF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F8616CBB-2A95-4C4C-806A-7181F5FAE125}
+	EndGlobalSection
+EndGlobal
