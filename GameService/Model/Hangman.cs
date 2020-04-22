@@ -1,20 +1,35 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GameService.Model
 {
+    [DataContract]
     class Hangman
     {
-        string hiddenWord;
-        public string VisibleWord { get; set; }
-        public int Lives { get; set; }
-        public ArrayList UsedLetters { get; set; } = new ArrayList();
-        public bool IsGameWon { get; set; }
-        public bool IsGameLost { get; set; }
-        public bool IsGuessCorrect { get; set; }
+        [DataMember] 
+        private string HiddenWord { get; set; }
+
+        [DataMember]
+        private string VisibleWord { get; set; }
+
+        [DataMember]
+        private int Lives { get; set; }
+
+        [DataMember]
+        private ArrayList UsedLetters { get; set; } = new ArrayList();
+
+        [DataMember]
+        private bool IsGameWon { get; set; }
+
+        [DataMember]
+        private bool IsGameLost { get; set; }
+
+        [DataMember]
+        private bool IsGuessCorrect { get; set; }
 
 
         public Hangman()
@@ -25,7 +40,7 @@ namespace GameService.Model
 
         public void Guess(string guess)
         {
-            guess.ToLower();
+            guess = guess.ToLower();
             if (guess.Length > 1)
             {
                 GuessWord(guess);
@@ -53,7 +68,11 @@ namespace GameService.Model
 
         private void GuessWord(string guess)
         {
-            if (HiddenWord == guess) VisibleWord = hiddenWord;
+            if (HiddenWord == guess)
+            {
+                VisibleWord = HiddenWord;
+                IsGuessCorrect = true;
+            }
             else Lives -= 2;
         }
 
@@ -63,7 +82,7 @@ namespace GameService.Model
             StringBuilder stringBuilder = new StringBuilder(VisibleWord);
             for (int i = 0; i < HiddenWord.Length; i++)
             {
-                if (hiddenWord[i] == letter)
+                if (HiddenWord[i] == letter)
                 {
                     stringBuilder[i] = letter;
                 }
@@ -81,14 +100,10 @@ namespace GameService.Model
             IsGameLost = false;
         }
 
-        public string HiddenWord
+        public void setHiddenWord(string word)
         {
-            get => hiddenWord;
-            set
-            {
-                GenerateVisibleWord(value.Length);
-                hiddenWord = value;
-            }
+            GenerateVisibleWord(word.Length);
+            HiddenWord = word.ToLower();
         }
 
         private void GenerateVisibleWord(int length)
