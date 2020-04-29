@@ -1,0 +1,23 @@
+﻿<Window x:Name="guessWordDialog" x:Class="GameGUI.GuessWordDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameGUI"
+        mc:Ignorable="d"
+        Title="Gæt ordet!" Height="138" Width="266" WindowStartupLocation="CenterOwner" Icon="/galge.jpg">
+    <Grid Margin="0,0,0,-1">
+        <TextBlock x:Name="test" HorizontalAlignment="Left" Text="Gæt ordet hvis du tør, der er konsekvenser hvis du gætter forkert!" TextWrapping="Wrap" VerticalAlignment="Top" Margin="28,10,0,0" Width="210"/>
+        <TextBox x:Name="TB_guessInput" Margin="28,52,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" Width="120" Height="20" VerticalAlignment="Top">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <Button x:Name="Btn_guessWord" Content="GÆT!" Margin="153,52,0,0" Click="Btn_guessWord_Click" FontWeight="Normal" FontStyle="Normal" HorizontalAlignment="Left" Width="32" Height="20" VerticalAlignment="Top">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+
+    </Grid>
+</Window>

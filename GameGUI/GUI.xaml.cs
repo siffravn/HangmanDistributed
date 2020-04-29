@@ -27,14 +27,25 @@ namespace GameGUI
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (HelloButton.IsChecked == true)
+            if (sender == Btn_openGuessDia)
             {
-                MessageBox.Show("Hello.");
+                GuessWordDialog guessWordDialog = new GuessWordDialog();
+                guessWordDialog.Owner = this;
+                guessWordDialog.Show();
             }
-            else if (GoodbyeButton.IsChecked == true)
+            Button B = (Button)sender;
+            switch (B.Content)
             {
-                MessageBox.Show("Goodbye");
+                case "Q":
+                    MessageBox.Show(Btn_Q.Content.ToString());
+                    TB_visibleWord.Text = Btn_Q.Content.ToString();
+                    Btn_Q.Visibility = Visibility.Hidden;
+                    break;
+                case "W":
+                    MessageBox.Show(Btn_W.Content.ToString());
+                    break;
             }
+        GallowImage.Source = new BitmapImage(new Uri("/Images/forkert1.png", UriKind.Relative));
         }
     }
 }
