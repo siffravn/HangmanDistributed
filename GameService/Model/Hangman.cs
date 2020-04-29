@@ -11,25 +11,25 @@ namespace GameService.Model
     public class Hangman
     {
         [DataMember] 
-        private string HiddenWord { get; set; }
+        public string HiddenWord { get; set; }
 
         [DataMember]
-        private string VisibleWord { get; set; }
+        public string VisibleWord { get; set; }
 
         [DataMember]
-        private int Lives { get; set; }
+        public int Lives { get; set; }
 
         [DataMember]
-        private ArrayList UsedLetters { get; set; } = new ArrayList();
+        public ArrayList UsedLetters { get; set; } = new ArrayList();
 
         [DataMember]
-        private bool IsGameWon { get; set; }
+        public bool IsGameWon { get; set; }
 
         [DataMember]
-        private bool IsGameLost { get; set; }
+        public bool IsGameLost { get; set; }
 
         [DataMember]
-        private bool IsGuessCorrect { get; set; }
+        public bool IsGuessCorrect { get; set; }
 
 
         public Hangman()

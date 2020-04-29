@@ -16,7 +16,16 @@ namespace GameService
 
         public int ComputeScore(int id)
         {
-            throw new NotImplementedException();
+            int totalscore = 0; 
+            Hangman hangman = games[id];
+            int lives = hangman.Lives;
+            int usedLetters = hangman.UsedLetters.Count;
+
+            totalscore += (lives * 7);
+            totalscore -= (usedLetters * 2);
+
+            return totalscore;
+
         }
 
         public Hangman CreateGame(int id)
@@ -30,7 +39,10 @@ namespace GameService
 
         public Hangman Guess(int id, string guess)
         {
-            throw new NotImplementedException();
+            Hangman hangman = games[id];
+            hangman.Guess(guess);
+
+            return hangman;
         }
 
         public Hangman NewGame(int id)
