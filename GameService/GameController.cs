@@ -12,15 +12,20 @@ namespace GameService
     {
 
         private static Dictionary<int, Hangman> games = new Dictionary<int, Hangman>();
+        private static Words words = new Words();
 
         public int ComputeScore(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void CreateGame(int id)
+        public Hangman CreateGame(int id)
         {
-            throw new NotImplementedException();
+            Hangman hangman = new Hangman();
+            //hangman.setHiddenWord(words.Random());
+            games.Add(id, hangman);
+
+            return hangman;
         }
 
         public Hangman Guess(int id, string guess)
@@ -30,12 +35,17 @@ namespace GameService
 
         public Hangman NewGame(int id)
         {
-            throw new NotImplementedException();
+            Hangman hangman = games[id];
+
+            hangman.Reset();
+            hangman.setHiddenWord(words.Random());
+
+            return hangman;
         }
 
         public void TerminateGame(int id)
         {
-            throw new NotImplementedException();
+            games.Remove(id);
         }
     }
 }

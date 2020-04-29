@@ -12,7 +12,7 @@ namespace GameService
     public interface IGameController
     {
         [OperationContract]
-        void CreateGame(int id);
+        Hangman CreateGame(int id);
 
         [OperationContract]
         void TerminateGame(int id);

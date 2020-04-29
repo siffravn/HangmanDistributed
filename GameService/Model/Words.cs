@@ -10,7 +10,7 @@ namespace GameService.Model
     {
         public ArrayList WordList { get; set; } = new ArrayList();
 
-        public void Buildin()
+        public Words()
         {
             WordList.Clear();
             WordList.Add("car");
