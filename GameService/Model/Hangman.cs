@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace GameService.Model
 {
     [DataContract]
-    class Hangman
+    public class Hangman
     {
         [DataMember] 
         private string HiddenWord { get; set; }
