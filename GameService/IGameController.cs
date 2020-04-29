@@ -15,12 +15,16 @@ namespace GameService
         void CreateGame(int id);
 
         [OperationContract]
-        void Terminate(int id);
+        void TerminateGame(int id);
 
         [OperationContract]
         Hangman Guess(int id, string guess);
 
-        // TODO: Add your service operations here
+        [OperationContract]
+        Hangman NewGame(int id);
+
+        [OperationContract]
+        int ComputeScore(int id);
     }
 
 }
