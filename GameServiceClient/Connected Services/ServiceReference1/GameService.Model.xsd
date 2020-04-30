@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GameService.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GameService.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="Hangman">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HiddenWord" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsGameLost" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsGameWon" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsGuessCorrect" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Lives" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UsedLetters" nillable="true" type="q1:ArrayOfanyType" />
+      <xs:element minOccurs="0" name="VisibleWord" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Hangman" nillable="true" type="tns:Hangman" />
+</xs:schema>
