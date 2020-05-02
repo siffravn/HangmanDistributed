@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GameGUI"
         mc:Ignorable="d"
         Title="Hangman" Height="450" Width="800" Icon="/Images/forkert6.png">
-    <Grid RenderTransformOrigin="0.495,0.456" Margin="0,0,0,-6">
+    <Grid RenderTransformOrigin="0.495,0.456" Margin="-1,0,1,-6">
         <Button x:Name="Btn_Q" Content="Q" HorizontalAlignment="Left" Margin="248,275,0,0" VerticalAlignment="Top" Click="Button_Click" Cursor="Hand" Width="20" Height="20"/>
         <Image x:Name="GallowImage" HorizontalAlignment="Left" Height="100" Margin="359,60,0,0" VerticalAlignment="Top" Width="100" Source="/Images/galge.png"/>
         <Button x:Name="Btn_W" Content="W" HorizontalAlignment="Left" Margin="273,275,0,0" VerticalAlignment="Top" Click="Button_Click" RenderTransformOrigin="0.576,0.621" Cursor="Hand" Width="20" Height="20"/>

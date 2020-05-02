@@ -26,6 +26,7 @@ namespace GameGUI
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
+            /// TODO: implement logic for button press (guess the letter)
         {
             if (sender == Btn_openGuessDia)
             {
