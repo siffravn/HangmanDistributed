@@ -8,15 +8,15 @@
         Title="Hangman" Height="450" Width="800" Icon="/Images/forkert6.png">
     <Grid RenderTransformOrigin="0.495,0.456" Margin="-1,0,1,-6">
         <Button x:Name="Btn_Q" Content="Q" HorizontalAlignment="Left" Margin="248,275,0,0" VerticalAlignment="Top" Click="Button_Click" Cursor="Hand" Width="20" Height="20"/>
-        <Image x:Name="GallowImage" HorizontalAlignment="Left" Height="100" Margin="359,60,0,0" VerticalAlignment="Top" Width="100" Source="/Images/galge.png"/>
+        <Image x:Name="GallowImage" HorizontalAlignment="Left" Height="147" Margin="311,34,0,0" VerticalAlignment="Top" Width="136" Source="/Images/galge.png"/>
         <Button x:Name="Btn_W" Content="W" HorizontalAlignment="Left" Margin="273,275,0,0" VerticalAlignment="Top" Click="Button_Click" RenderTransformOrigin="0.576,0.621" Cursor="Hand" Width="20" Height="20"/>
         <Button x:Name="Btn_T" Content="T" HorizontalAlignment="Left" Margin="348,275,0,0" VerticalAlignment="Top" Cursor="Hand" Width="20" Height="20"/>
         <Button x:Name="Btn_R" Content="R" HorizontalAlignment="Left" Margin="323,275,0,0" VerticalAlignment="Top" Cursor="Hand" Width="20" Height="20"/>
         <Button x:Name="Btn_U" Content="U" HorizontalAlignment="Left" Margin="398,275,0,0" VerticalAlignment="Top" Cursor="Hand" Width="20" Height="20"/>
         <Button x:Name="Btn_Y" Content="Y" HorizontalAlignment="Left" Margin="373,275,0,0" VerticalAlignment="Top" Cursor="Hand" Width="20" Height="20"/>
         <Button x:Name="Btn_E" Content="E" HorizontalAlignment="Left" Margin="298,275,0,0" VerticalAlignment="Top" Cursor="Hand" Width="20" Height="20"/>
-        <TextBlock x:Name="TB_visibleWord" HorizontalAlignment="Left" Margin="308,0,0,0" Text="visibleWord" TextWrapping="Wrap" VerticalAlignment="Center" RenderTransformOrigin="0.582,0.564"/>
-        <Button x:Name="Btn_openGuessDia" Content="Gæt ordet!" HorizontalAlignment="Left" Margin="597,275,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBlock x:Name="TB_visibleWord" HorizontalAlignment="Left" Margin="373,194,0,0" Text="visibleWord" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.582,0.564" Width="130"/>
+        <Button x:Name="Btn_openGuessDia" Content="Gæt ordet!" HorizontalAlignment="Left" Margin="508,220,0,0" VerticalAlignment="Top" Click="Button_Click"/>
         <Button x:Name="Btn_I" Content="I" HorizontalAlignment="Left" Margin="423,275,0,0" VerticalAlignment="Top" Click="Button_Click" Width="20" Height="20" Cursor="Hand"/>
         <Button x:Name="Btn_F" Content="F" HorizontalAlignment="Left" Margin="323,300,0,0" VerticalAlignment="Top" Click="Button_Click" Width="20" Height="20" Cursor="Hand"/>
         <Button x:Name="Btn_P" Content="P" HorizontalAlignment="Left" Margin="473,275,0,0" VerticalAlignment="Top" Click="Button_Click" Width="20" Height="20" Cursor="Hand"/>
@@ -39,5 +39,7 @@
         <Button x:Name="Btn_B" Content="B" HorizontalAlignment="Left" Margin="398,325,0,0" VerticalAlignment="Top" Click="Button_Click" Width="20" Height="20" Cursor="Hand"/>
         <Button x:Name="Btn_N" Content="N" HorizontalAlignment="Left" Margin="423,325,0,0" VerticalAlignment="Top" Click="Button_Click" Width="20" Height="20" Cursor="Hand"/>
         <Button x:Name="Btn_M" Content="M" HorizontalAlignment="Left" Margin="448,325,0,0" VerticalAlignment="Top" Click="Button_Click" Width="20" Height="20" Cursor="Hand"/>
+        <TextBlock HorizontalAlignment="Left" Margin="248,194,0,0" Text="Ordet du skal gætte:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="248,248,0,0" Text="Ubrugte bogstaver:" TextWrapping="Wrap" VerticalAlignment="Top"/>
     </Grid>
 </Window>

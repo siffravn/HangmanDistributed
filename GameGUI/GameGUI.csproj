@@ -5,9 +5,13 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="hangmanBackground.jpg" />
+  </ItemGroup>
 	
   <ItemGroup>
-    <Resource Include="galge.jpg" />
+    <Resource Include="hangmanBackground.jpg" />
     <Resource Include="Images\forkert1.png" />
     <Resource Include="Images\forkert2.png" />
     <Resource Include="Images\forkert3.png" />
