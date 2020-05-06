@@ -18,6 +18,10 @@ namespace GameServiceClient
             Hangman game = client.CreateGame(123);
             Console.WriteLine(game.HiddenWord);
 
+            game = client.NewGame(123);
+            Console.WriteLine(game.HiddenWord);
+            Console.WriteLine(game.VisibleWord);
+
             // Step 3: Close the client to gracefully close the connection and clean up resources.
             Console.WriteLine("\nPress <Enter> to terminate the client.");
             Console.ReadLine();
