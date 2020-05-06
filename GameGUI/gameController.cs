@@ -8,13 +8,13 @@ using System.ServiceModel;
 namespace GameGUI
 {
     
-    class gameController
+    public class GameController
     {
         private int clientID;
-        private Hangman game;
+        public Hangman game = new Hangman();
         GameControllerClient client;
 
-        public gameController()
+        public GameController()
         {
             BasicHttpBinding binding = new BasicHttpBinding();
             EndpointAddress address = new EndpointAddress("http://localhost:8080/GameService/GameController");

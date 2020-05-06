@@ -27,7 +27,7 @@ namespace GameGUI
             InitializeComponent();
             
         }
-
+        //TODO make individual button methods
         private void Button_Click(object sender, RoutedEventArgs e)
             /// TODO: implement logic for button press (guess the letter)
         {
@@ -38,11 +38,16 @@ namespace GameGUI
                 GuessWordDialog guessWordDialog = new GuessWordDialog();
                 guessWordDialog.gameController = gameController;
                 guessWordDialog.Owner = this;
-                guessWordDialog.Show();
-
-                
+                guessWordDialog.Show();                
+            } else
+            {
+                Button B = (Button)sender;
+                B.Visibility = Visibility.Hidden;
+                gameController.Guess(B.Content.ToString());
             }
+            /**
             Button B = (Button)sender;
+                        
             switch (B.Content)
             {
                 case "Q":
@@ -51,18 +56,22 @@ namespace GameGUI
                     
                     break;
                 case "W":
-                    //gameController.Guess(B.Content.ToString());
+                    gameController.Guess(B.Content.ToString());
                     break;
             }
+
+    **/
             UpdateView();
 
         }
 
         public void UpdateView()
         {
-            TB_visibleWord.Text = gameController.VisibleWord;
+            TB_visibleWord.Text = gameController.game.VisibleWord;
+
+            //TODO revert lives switch case (currently operates with antalForkerteBogstaver
             
-            switch (gameController.Lives)
+            switch (gameController.game.Lives)
             {
                 case 0 :
                     GallowImage.Source = new BitmapImage(new Uri("/Images/galge.png", UriKind.Relative));
