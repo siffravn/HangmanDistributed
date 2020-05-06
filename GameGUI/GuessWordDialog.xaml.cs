@@ -17,6 +17,7 @@ namespace GameGUI
     /// </summary>
     public partial class GuessWordDialog : Window
     {
+        public GameController gameController { get; set; }
         public GuessWordDialog()
         {
             InitializeComponent();
@@ -24,7 +25,13 @@ namespace GameGUI
 
         private void Btn_guessWord_Click(object sender, RoutedEventArgs e)
         {
-
+            gameController.Guess(TB_guessInput.Text);
+            guessWordDialog.Close();
+            var gui = this.Owner as GUI;
+            gui.UpdateView();
+          
+           
+           
         }
     }
 }
