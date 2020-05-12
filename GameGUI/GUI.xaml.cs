@@ -25,7 +25,7 @@ namespace GameGUI
         public GUI()
         {
             InitializeComponent();
-            
+            UpdateView();
         }
         //TODO make individual button methods
         private void Button_Letter_Click(object sender, RoutedEventArgs e)
@@ -33,7 +33,7 @@ namespace GameGUI
         {
             Button B = (Button)sender;
             B.Visibility = Visibility.Hidden;
-            gameController.Guess(B.Content.ToString());
+            gameController.GuessAsync(B.Content.ToString());
             UpdateView();
 
         }
@@ -55,25 +55,25 @@ namespace GameGUI
             
             switch (gameController.game.Lives)
             {
-                case 0 :
+                case 6 :
                     GallowImage.Source = new BitmapImage(new Uri("/Images/galge.png", UriKind.Relative));
                     break;
-                case 1:
+                case 5:
                     GallowImage.Source = new BitmapImage(new Uri("/Images/forkert1.png", UriKind.Relative));
                     break;
-                case 2:
+                case 4:
                     GallowImage.Source = new BitmapImage(new Uri("/Images/forkert2.png", UriKind.Relative));
                     break;
                 case 3:
                     GallowImage.Source = new BitmapImage(new Uri("/Images/forkert3.png", UriKind.Relative));
                     break;
-                case 4:
+                case 2:
                     GallowImage.Source = new BitmapImage(new Uri("/Images/forkert4.png", UriKind.Relative));
                     break;
-                case 5:
+                case 1:
                     GallowImage.Source = new BitmapImage(new Uri("/Images/forkert5.png", UriKind.Relative));
                     break;
-                case 6:
+                case 0:
                     GallowImage.Source = new BitmapImage(new Uri("/Images/forkert6.png", UriKind.Relative));
                     break;
             }

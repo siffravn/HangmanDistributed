@@ -10,7 +10,7 @@ namespace GameGUI
     
     public class GameController
     {
-        private int clientID;
+        private int clientID = 123;
         public Hangman game = new Hangman();
         GameControllerClient client;
 
@@ -19,16 +19,17 @@ namespace GameGUI
             BasicHttpBinding binding = new BasicHttpBinding();
             EndpointAddress address = new EndpointAddress("http://localhost:8080/GameService/GameController");
 
+
             client = new GameControllerClient(binding, address);
+            game = client.CreateGameAsync(clientID).Result;
         }
 
-        public string Guess(string guessedWord)
+        public async System.Threading.Tasks.Task<string> GuessAsync(string guessedWord)
         {
-
-            Console.WriteLine(guessedWord);
             //TODO call guessword in backend
-            game.VisibleWord = guessedWord;
-            game.Lives++;
+
+            game = await client.GuessAsync(clientID, guessedWord);
+           
 
             return guessedWord;
         }

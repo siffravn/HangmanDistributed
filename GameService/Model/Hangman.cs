@@ -35,7 +35,7 @@ namespace GameService.Model
         public Hangman()
         {
             Reset();
-            HiddenWord = "test";
+            setHiddenWord("test");
         }
 
         public void Guess(string guess)
