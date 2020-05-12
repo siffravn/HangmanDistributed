@@ -28,42 +28,24 @@ namespace GameGUI
             
         }
         //TODO make individual button methods
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Letter_Click(object sender, RoutedEventArgs e)
             /// TODO: implement logic for button press (guess the letter)
         {
-            //gameController.VisibleWord = "dwadwadwadwa";
-
-            if (sender == Btn_openGuessDia)
-            {
-                GuessWordDialog guessWordDialog = new GuessWordDialog();
-                guessWordDialog.gameController = gameController;
-                guessWordDialog.Owner = this;
-                guessWordDialog.Show();                
-            } else
-            {
-                Button B = (Button)sender;
-                B.Visibility = Visibility.Hidden;
-                gameController.Guess(B.Content.ToString());
-            }
-            /**
             Button B = (Button)sender;
-                        
-            switch (B.Content)
-            {
-                case "Q":
-                    Btn_Q.Visibility = Visibility.Hidden;
-                    gameController.Guess(B.Content.ToString());
-                    
-                    break;
-                case "W":
-                    gameController.Guess(B.Content.ToString());
-                    break;
-            }
-
-    **/
+            B.Visibility = Visibility.Hidden;
+            gameController.Guess(B.Content.ToString());
             UpdateView();
 
         }
+
+        private void Button_Guess_Word_Click(Object sender, RoutedEventArgs e)
+        {
+            GuessWordDialog guessWordDialog = new GuessWordDialog();
+            guessWordDialog.gameController = gameController;
+            guessWordDialog.Owner = this;
+            guessWordDialog.Show();
+        }
+        
 
         public void UpdateView()
         {
