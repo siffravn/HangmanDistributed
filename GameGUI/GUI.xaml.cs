@@ -28,12 +28,12 @@ namespace GameGUI
             UpdateView();
         }
         //TODO make individual button methods
-        private void Button_Letter_Click(object sender, RoutedEventArgs e)
+        private async void Button_Letter_Click(object sender, RoutedEventArgs e)
             /// TODO: implement logic for button press (guess the letter)
         {
             Button B = (Button)sender;
             B.Visibility = Visibility.Hidden;
-            gameController.GuessAsync(B.Content.ToString());
+            await gameController.GuessAsync(B.Content.ToString());
             UpdateView();
 
         }
@@ -51,7 +51,7 @@ namespace GameGUI
         {
             TB_visibleWord.Text = gameController.game.VisibleWord;
 
-            //TODO revert lives switch case (currently operates with antalForkerteBogstaver
+
             
             switch (gameController.game.Lives)
             {

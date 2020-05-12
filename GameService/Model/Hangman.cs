@@ -95,7 +95,7 @@ namespace GameService.Model
         public void Reset()
         {
             UsedLetters.Clear();
-            Lives = 7;
+            Lives = 6;
             IsGameWon = false;
             IsGameLost = false;
         }

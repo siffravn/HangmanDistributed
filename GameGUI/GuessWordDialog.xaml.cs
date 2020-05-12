@@ -23,9 +23,9 @@ namespace GameGUI
             InitializeComponent();
         }
 
-        private void Btn_guessWord_Click(object sender, RoutedEventArgs e)
+        private async void Btn_guessWord_Click(object sender, RoutedEventArgs e)
         {
-            gameController.GuessAsync(TB_guessInput.Text);
+            await gameController.GuessAsync(TB_guessInput.Text);         
             guessWordDialog.Close();
             var gui = this.Owner as GUI;
             gui.UpdateView();
