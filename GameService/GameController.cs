@@ -28,13 +28,27 @@ namespace GameService
 
         }
 
-        public Hangman CreateGame(int id)
+        public int CreateGame()
         {
             Hangman hangman = new Hangman();
-            //hangman.setHiddenWord(words.Random());
-            games.Add(id, hangman);
+            Random random = new Random();
+            bool added = false;
+            int id = 0;
 
-            return hangman;
+            while (!added)
+            {
+                try
+                {
+                    id = random.Next(0, 101);
+                    games.Add(id, hangman);
+                    added = true;
+                }
+                catch (ArgumentException e)
+                {
+                }
+            }
+
+            return id;
         }
 
         public Hangman Guess(int id, string guess)
