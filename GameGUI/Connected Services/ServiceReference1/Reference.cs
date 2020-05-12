@@ -131,7 +131,7 @@ namespace ServiceReference1
     {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameController/CreateGame", ReplyAction="http://tempuri.org/IGameController/CreateGameResponse")]
-        System.Threading.Tasks.Task<ServiceReference1.Hangman> CreateGameAsync(int id);
+        System.Threading.Tasks.Task<int> CreateGameAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameController/TerminateGame", ReplyAction="http://tempuri.org/IGameController/TerminateGameResponse")]
         System.Threading.Tasks.Task TerminateGameAsync(int id);
@@ -156,14 +156,49 @@ namespace ServiceReference1
     public partial class GameControllerClient : System.ServiceModel.ClientBase<ServiceReference1.IGameController>, ServiceReference1.IGameController
     {
         
+        /// <summary>
+        /// Implement this partial method to configure the service endpoint.
+        /// </summary>
+        /// <param name="serviceEndpoint">The endpoint to configure</param>
+        /// <param name="clientCredentials">The client credentials</param>
+        static partial void ConfigureEndpoint(System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, System.ServiceModel.Description.ClientCredentials clientCredentials);
+        
+        public GameControllerClient() : 
+                base(GameControllerClient.GetDefaultBinding(), GameControllerClient.GetDefaultEndpointAddress())
+        {
+            this.Endpoint.Name = EndpointConfiguration.BasicHttpBinding_IGameController.ToString();
+            ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
+        }
+        
+        public GameControllerClient(EndpointConfiguration endpointConfiguration) : 
+                base(GameControllerClient.GetBindingForEndpoint(endpointConfiguration), GameControllerClient.GetEndpointAddress(endpointConfiguration))
+        {
+            this.Endpoint.Name = endpointConfiguration.ToString();
+            ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
+        }
+        
+        public GameControllerClient(EndpointConfiguration endpointConfiguration, string remoteAddress) : 
+                base(GameControllerClient.GetBindingForEndpoint(endpointConfiguration), new System.ServiceModel.EndpointAddress(remoteAddress))
+        {
+            this.Endpoint.Name = endpointConfiguration.ToString();
+            ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
+        }
+        
+        public GameControllerClient(EndpointConfiguration endpointConfiguration, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(GameControllerClient.GetBindingForEndpoint(endpointConfiguration), remoteAddress)
+        {
+            this.Endpoint.Name = endpointConfiguration.ToString();
+            ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
+        }
+        
         public GameControllerClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress)
         {
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.Hangman> CreateGameAsync(int id)
+        public System.Threading.Tasks.Task<int> CreateGameAsync()
         {
-            return base.Channel.CreateGameAsync(id);
+            return base.Channel.CreateGameAsync();
         }
         
         public System.Threading.Tasks.Task TerminateGameAsync(int id)
@@ -194,6 +229,45 @@ namespace ServiceReference1
         public virtual System.Threading.Tasks.Task CloseAsync()
         {
             return System.Threading.Tasks.Task.Factory.FromAsync(((System.ServiceModel.ICommunicationObject)(this)).BeginClose(null, null), new System.Action<System.IAsyncResult>(((System.ServiceModel.ICommunicationObject)(this)).EndClose));
+        }
+        
+        private static System.ServiceModel.Channels.Binding GetBindingForEndpoint(EndpointConfiguration endpointConfiguration)
+        {
+            if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_IGameController))
+            {
+                System.ServiceModel.BasicHttpBinding result = new System.ServiceModel.BasicHttpBinding();
+                result.MaxBufferSize = int.MaxValue;
+                result.ReaderQuotas = System.Xml.XmlDictionaryReaderQuotas.Max;
+                result.MaxReceivedMessageSize = int.MaxValue;
+                result.AllowCookies = true;
+                return result;
+            }
+            throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
+        }
+        
+        private static System.ServiceModel.EndpointAddress GetEndpointAddress(EndpointConfiguration endpointConfiguration)
+        {
+            if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_IGameController))
+            {
+                return new System.ServiceModel.EndpointAddress("http://localhost:8080/GameService/GameController");
+            }
+            throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
+        }
+        
+        private static System.ServiceModel.Channels.Binding GetDefaultBinding()
+        {
+            return GameControllerClient.GetBindingForEndpoint(EndpointConfiguration.BasicHttpBinding_IGameController);
+        }
+        
+        private static System.ServiceModel.EndpointAddress GetDefaultEndpointAddress()
+        {
+            return GameControllerClient.GetEndpointAddress(EndpointConfiguration.BasicHttpBinding_IGameController);
+        }
+        
+        public enum EndpointConfiguration
+        {
+            
+            BasicHttpBinding_IGameController,
         }
     }
 }

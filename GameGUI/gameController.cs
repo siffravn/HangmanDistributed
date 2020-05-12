@@ -10,7 +10,7 @@ namespace GameGUI
     
     public class GameController
     {
-        private int clientID = 123;
+        private int clientID;
         public Hangman game = new Hangman();
         GameControllerClient client;
         public int score;
@@ -22,7 +22,7 @@ namespace GameGUI
 
 
             client = new GameControllerClient(binding, address);
-            game = client.CreateGameAsync(clientID).Result;
+            clientID = client.CreateGameAsync().Result;
         }
 
         public async System.Threading.Tasks.Task<string> GuessAsync(string guessedWord)
