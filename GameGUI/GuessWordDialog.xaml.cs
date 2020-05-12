@@ -18,6 +18,7 @@ namespace GameGUI
     public partial class GuessWordDialog : Window
     {
         public GameController gameController { get; set; }
+
         public GuessWordDialog()
         {
             InitializeComponent();

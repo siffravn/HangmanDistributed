@@ -29,9 +29,21 @@ namespace GameGUI
             //TODO call guessword in backend
 
             game = await client.GuessAsync(clientID, guessedWord);
+
+            if (game.IsGameLost || game.IsGameWon)
+            {
+                await client.TerminateGameAsync(clientID);
+            }
            
 
             return guessedWord;
+        }
+
+        public async System.Threading.Tasks.Task<int> CalcScore()
+        {
+            int score;
+            score = await client.ComputeScoreAsync(clientID);
+            return score;
         }
     }
 }

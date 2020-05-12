@@ -43,12 +43,30 @@ namespace GameGUI
             GuessWordDialog guessWordDialog = new GuessWordDialog();
             guessWordDialog.gameController = gameController;
             guessWordDialog.Owner = this;
-            guessWordDialog.Show();
+            guessWordDialog.Show(); 
         }
         
 
         public void UpdateView()
         {
+
+            if (gameController.game.IsGameLost)
+            {
+                Losepage losepage = new Losepage();
+                losepage.Text_Block_Word.Text = gameController.game.HiddenWord;
+                losepage.Show();
+                this.Close();
+                
+            }
+
+            if (gameController.game.IsGameWon)
+            {
+                Winpage winpage = new Winpage();
+                winpage.gameController = gameController;
+                winpage.Show();
+                this.Close();
+            }
+
             TB_visibleWord.Text = gameController.game.VisibleWord;
             Txt_Block_lives.Text = ("Liv: " + gameController.game.Lives);
 
@@ -78,6 +96,8 @@ namespace GameGUI
                     GallowImage.Source = new BitmapImage(new Uri("/Images/forkert6.png", UriKind.Relative));
                     break;
             }
+
+
         }
 
     }
