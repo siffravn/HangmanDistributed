@@ -25,8 +25,15 @@ namespace GameGUI
         public GUI()
         {
             InitializeComponent();
-            UpdateView();
+            InitializeGUI();
         }
+        public async void InitializeGUI()
+        {
+            await gameController.NewGameAsync();
+            UpdateView();
+
+        }
+
         //TODO make individual button methods
         private async void Button_Letter_Click(object sender, RoutedEventArgs e)
             /// TODO: implement logic for button press (guess the letter)

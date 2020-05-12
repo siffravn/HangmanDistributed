@@ -47,5 +47,12 @@ namespace GameGUI
             score = await client.ComputeScoreAsync(clientID);
             return score;
         }
-    }
+
+        public async System.Threading.Tasks.Task NewGameAsync()
+        {
+            game = await client.NewGameAsync(clientID);
+
+        }
+
+    } 
 }
