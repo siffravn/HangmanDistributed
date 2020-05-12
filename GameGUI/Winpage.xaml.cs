@@ -23,7 +23,7 @@ namespace GameGUI
         public Winpage()
         {
             InitializeComponent();
-            Txt_Block_Score.Text = "";
+            //Txt_Block_Score.Text = gameController.CalcScore().Result.ToString();
         }
 
        

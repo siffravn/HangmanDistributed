@@ -13,6 +13,7 @@ namespace GameGUI
         private int clientID = 123;
         public Hangman game = new Hangman();
         GameControllerClient client;
+        public int score;
 
         public GameController()
         {
@@ -32,6 +33,7 @@ namespace GameGUI
 
             if (game.IsGameLost || game.IsGameWon)
             {
+                await CalcScore();
                 await client.TerminateGameAsync(clientID);
             }
            
@@ -41,7 +43,7 @@ namespace GameGUI
 
         public async System.Threading.Tasks.Task<int> CalcScore()
         {
-            int score;
+            
             score = await client.ComputeScoreAsync(clientID);
             return score;
         }

@@ -36,6 +36,10 @@ namespace GameService.Model
         {
             Reset();
             setHiddenWord("test");
+            /*
+            Words words = new Words();       
+            setHiddenWord(words.Random());
+            */
         }
 
         public void Guess(string guess)

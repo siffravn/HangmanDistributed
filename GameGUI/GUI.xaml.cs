@@ -63,6 +63,7 @@ namespace GameGUI
             {
                 Winpage winpage = new Winpage();
                 winpage.gameController = gameController;
+                winpage.Txt_Block_Score.Text = gameController.score.ToString();
                 winpage.Show();
                 this.Close();
             }
