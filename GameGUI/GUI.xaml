@@ -41,5 +41,6 @@
         <Button x:Name="Btn_M" Content="M" HorizontalAlignment="Left" Margin="448,325,0,0" VerticalAlignment="Top" Click="Button_Letter_Click" Width="20" Height="20" Cursor="Hand"/>
         <TextBlock HorizontalAlignment="Left" Margin="248,194,0,0" Text="Ordet du skal gætte:" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="248,248,0,0" Text="Ubrugte bogstaver:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Txt_Block_lives" HorizontalAlignment="Left" Margin="358,13,0,0" Text="Liv:" TextWrapping="Wrap" VerticalAlignment="Top" Width="64"/>
     </Grid>
 </Window>

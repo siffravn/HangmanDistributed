@@ -50,6 +50,7 @@ namespace GameGUI
         public void UpdateView()
         {
             TB_visibleWord.Text = gameController.game.VisibleWord;
+            Txt_Block_lives.Text = ("Liv: " + gameController.game.Lives);
 
 
             
