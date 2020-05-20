@@ -34,9 +34,9 @@ namespace GameGUI
 
         }
 
-        //TODO make individual button methods
+ 
         private async void Button_Letter_Click(object sender, RoutedEventArgs e)
-            /// TODO: implement logic for button press (guess the letter)
+            
         {
             Button B = (Button)sender;
             B.Visibility = Visibility.Hidden;
