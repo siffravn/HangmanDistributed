@@ -13,15 +13,15 @@ namespace GameService.Model
         public Words()
         {
             WordList.Clear();
-            WordList.Add("car");
-            WordList.Add("computer");
-            WordList.Add("programming");
-            WordList.Add("highway");
-            WordList.Add("busride");
-            WordList.Add("pavement");
-            WordList.Add("slug");
-            WordList.Add("blackbird");
-            WordList.Add("nineteen");
+            WordList.Add("tommelfinger");
+            WordList.Add("stjerne");
+            WordList.Add("svane");
+            WordList.Add("dagbog");
+            WordList.Add("sahara");
+            WordList.Add("mikroskop");
+            WordList.Add("mayonaise");
+            WordList.Add("arbejdskraft");
+            WordList.Add("kanariefugl");
         }
 
         public string Random()

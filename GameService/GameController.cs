@@ -19,10 +19,8 @@ namespace GameService
             int totalscore = 0; 
             Hangman hangman = games[id];
             int lives = hangman.Lives;
-            int usedLetters = hangman.UsedLetters.Count;
 
-            totalscore += (lives * 7);
-            totalscore -= (usedLetters * 2);
+            totalscore = (hangman.HiddenWord.Length * 10) + (lives*2);          
 
             return totalscore;
 
